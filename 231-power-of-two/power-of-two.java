@@ -1,6 +1,10 @@
 class Solution {
     public boolean isPowerOfTwo(int n) {
-        if(n <= 0){
+        // Optimal Solution :- Bit Manuplatation 
+        return n > 0 && (n & (n-1)) == 0;
+    }
+}
+      /*  if(n <= 0){
             return false;
         }
         while(n % 2 == 0){
@@ -9,3 +13,4 @@ class Solution {
         return n == 1;
     }
 }
+*/
