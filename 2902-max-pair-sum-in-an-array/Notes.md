@@ -1,1 +1,1 @@
-<h2>max-pair-sum-in-an-array Notes</h2><hr>[ Time taken: 5d 6hrs 8m 17s ]
+<h2>max-pair-sum-in-an-array Notes</h2><hr>[ Time taken: 5d 6hrs 9m 3s ]
