@@ -8,23 +8,73 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
-        ListNode dummy   = new ListNode(0);
-        ListNode current = dummy;
-        while (list1 != null && list2 != null) {
+ class Solution {
+    public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
+        ListNode i = head1;
+        ListNode j = head2;
+        ListNode dummy = new ListNode(-1);
+        ListNode k = dummy;
 
-            if (list1.val <= list2.val) {
-                current.next = list1;
-                list1 = list1.next;
-            } else {
-                current.next = list2;
-                list2 = list2.next;
+        while(i != null && j != null){
+            if(i.val <= j.val){
+                k.next = i;
+                i = i.next;
+                // k = k.next;
             }
-            current = current.next;
+            else{   // (i.val >= j.val)
+            k.next = j;
+            j = j.next;
+            // k = k.next;
+            }
+            k = k.next;
         }
-        current.next = (list1 != null) ? list1 : list2;
+        if(i == null){
+            k.next = j;
+        }
+        else{
+            k.next = i;
+        }
         return dummy.next;
     }
-}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class Solution {
+//     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+
+//         ListNode dummy   = new ListNode(0);
+//         ListNode current = dummy;
+//         while (list1 != null && list2 != null) {
+
+//             if (list1.val <= list2.val) {
+//                 current.next = list1;
+//                 list1 = list1.next;
+//             } else {
+//                 current.next = list2;
+//                 list2 = list2.next;
+//             }
+//             current = current.next;
+//         }
+//         current.next = (list1 != null) ? list1 : list2;
+//         return dummy.next;
+//     }
+// }
